@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="org.hisp.dhis"
+		module="dhis-support-xml"
+		revision="2.2-SNAPSHOT"
+		status="integration"
+		publication="20110506140438"
+	>
+		<description homepage="" />
+		<m:dependency.management__org.hisp.dhis__dhis-support-test__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-support-test__version>
+		<m:dependency.management__org.springframework.security__spring-security-core__exclusion_3>org.springframework__spring-support</m:dependency.management__org.springframework.security__spring-security-core__exclusion_3>
+		<m:dependency.management__org.springframework.security__spring-security-core__exclusion_2>org.springframework__spring-aop</m:dependency.management__org.springframework.security__spring-security-core__exclusion_2>
+		<m:dependency.management__org.springframework.security__spring-security-core__exclusion_1>org.springframework__spring-core</m:dependency.management__org.springframework.security__spring-security-core__exclusion_1>
+		<m:dependency.management__org.apache.commons__commons-email__version>1.1</m:dependency.management__org.apache.commons__commons-email__version>
+		<m:dependency.management__org.apache.poi__poi__version>3.7</m:dependency.management__org.apache.poi__poi__version>
+		<m:dependency.management__org.hisp.dhis__dhis-service-administration__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-service-administration__version>
+		<m:dependency.management__org.springframework.security__spring-security-core__exclusion_0>org.springframework__spring-context</m:dependency.management__org.springframework.security__spring-security-core__exclusion_0>
+		<m:dependency.management__mysql__mysql-connector-java__version>5.1.6</m:dependency.management__mysql__mysql-connector-java__version>
+		<m:dependency.management__org.hibernate__hibernate-entitymanager__version>3.5.6-Final</m:dependency.management__org.hibernate__hibernate-entitymanager__version>
+		<m:dependency.management__org.hisp.dhis__dhis-support-xml__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-support-xml__version>
+		<m:dependency.management__javax.servlet__servlet-api__scope>provided</m:dependency.management__javax.servlet__servlet-api__scope>
+		<m:dependency.management__jfree__jcommon__version>1.0.15</m:dependency.management__jfree__jcommon__version>
+		<m:dependency.management__org.hisp.dhis__dhis-support-system__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-support-system__version>
+		<m:dependency.management__velocity__velocity__version>1.5</m:dependency.management__velocity__velocity__version>
+		<m:properties__spring.security.version>3.0.5.RELEASE</m:properties__spring.security.version>
+		<m:dependency.management__com.ibatis__ibatis2-sqlmap__version>2.1.7.597</m:dependency.management__com.ibatis__ibatis2-sqlmap__version>
+		<m:dependency.management__net.sf.jasperreports__jasperreports__exclusion_1>xerces__xercesImpl</m:dependency.management__net.sf.jasperreports__jasperreports__exclusion_1>
+		<m:dependency.management__net.sf.jasperreports__jasperreports__exclusion_0>xalan__xalan</m:dependency.management__net.sf.jasperreports__jasperreports__exclusion_0>
+		<m:dependency.management__org.apache.struts__struts2-spring-plugin__version>2.1.8.1</m:dependency.management__org.apache.struts__struts2-spring-plugin__version>
+		<m:dependency.management__org.amplecode__quick__version>1.3</m:dependency.management__org.amplecode__quick__version>
+		<m:dependency.management__jfree__jfreechart__exclusion_0>gnujaxp__gnujaxp</m:dependency.management__jfree__jfreechart__exclusion_0>
+		<m:dependency.management__javax.servlet__servlet-api__version>2.4</m:dependency.management__javax.servlet__servlet-api__version>
+		<m:dependency.management__org.hibernate__hibernate-ehcache__version>3.5.6-Final</m:dependency.management__org.hibernate__hibernate-ehcache__version>
+		<m:dependency.management__commons-collections__commons-collections__version>3.2</m:dependency.management__commons-collections__commons-collections__version>
+		<m:properties__spring.version>3.0.5.RELEASE</m:properties__spring.version>
+		<m:dependency.management__org.springframework__spring-orm__version>3.0.5.RELEASE</m:dependency.management__org.springframework__spring-orm__version>
+		<m:dependency.management__org.springframework__spring-tx__version>3.0.5.RELEASE</m:dependency.management__org.springframework__spring-tx__version>
+		<m:dependency.management__net.java.dev.msv__relaxngDatatype__scope>test</m:dependency.management__net.java.dev.msv__relaxngDatatype__scope>
+		<m:dependency.management__com.ibatis__ibatis2-common__version>2.1.7.597</m:dependency.management__com.ibatis__ibatis2-common__version>
+		<m:dependency.management__org.springframework__spring-web__version>3.0.5.RELEASE</m:dependency.management__org.springframework__spring-web__version>
+		<m:dependency.management__org.apache.xmlgraphics__batik-transcoder__exclusion_0>xalan__xalan</m:dependency.management__org.apache.xmlgraphics__batik-transcoder__exclusion_0>
+		<m:dependency.management__jfree__jcommon__exclusion_0>gnujaxp__gnujaxp</m:dependency.management__jfree__jcommon__exclusion_0>
+		<m:dependency.management__org.springframework.security__spring-security-config__version>3.0.5.RELEASE</m:dependency.management__org.springframework.security__spring-security-config__version>
+		<m:dependency.management__net.sf.ehcache__ehcache-core__version>2.3.2</m:dependency.management__net.sf.ehcache__ehcache-core__version>
+		<m:dependency.management__jep__jep__version>2.4.1</m:dependency.management__jep__jep__version>
+		<m:dependency.management__junit__junit__version>4.8.1</m:dependency.management__junit__junit__version>
+		<m:dependency.management__commons-fileupload__commons-fileupload__version>1.2.1</m:dependency.management__commons-fileupload__commons-fileupload__version>
+		<m:maven.plugins>org.apache.maven.plugins__maven-compiler-plugin__null|org.apache.maven.plugins__maven-surefire-plugin__null|org.apache.maven.plugins__maven-resources-plugin__2.2|org.codehaus.mojo__findbugs-maven-plugin__2.0.1|org.apache.maven.plugins__maven-compiler-plugin__null|org.apache.maven.plugins__maven-surefire-plugin__null|org.apache.maven.plugins__maven-resources-plugin__2.2|org.codehaus.mojo__findbugs-maven-plugin__2.0.1|org.apache.maven.plugins__maven-compiler-plugin__null|org.apache.maven.plugins__maven-surefire-plugin__null|org.apache.maven.plugins__maven-resources-plugin__2.2|org.codehaus.mojo__findbugs-maven-plugin__2.0.1|org.apache.maven.plugins__maven-compiler-plugin__null|org.apache.maven.plugins__maven-surefire-plugin__null|org.apache.maven.plugins__maven-resources-plugin__2.2|org.codehaus.mojo__findbugs-maven-plugin__2.0.1</m:maven.plugins>
+		<m:dependency.management__net.java.dev.msv__msv__scope>test</m:dependency.management__net.java.dev.msv__msv__scope>
+		<m:dependency.management__commons-logging__commons-logging__exclusion_0>avalon-framework__avalon-framework</m:dependency.management__commons-logging__commons-logging__exclusion_0>
+		<m:dependency.management__joda-time__joda-time__version>1.5.2</m:dependency.management__joda-time__joda-time__version>
+		<m:dependency.management__commons-logging__commons-logging__exclusion_1>logkit__logkit</m:dependency.management__commons-logging__commons-logging__exclusion_1>
+		<m:dependency.management__org.hisp.dhis__dhis-service-options__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-service-options__version>
+		<m:dependency.management__org.hibernate__hibernate-ehcache__exclusion_0>net.sf.ehcache__ehcache</m:dependency.management__org.hibernate__hibernate-ehcache__exclusion_0>
+		<m:dependency.management__org.springframework__spring-asm__version>3.0.5.RELEASE</m:dependency.management__org.springframework__spring-asm__version>
+		<m:dependency.management__org.hisp.dhis__dhis-support-jdbc-test__scope>test</m:dependency.management__org.hisp.dhis__dhis-support-jdbc-test__scope>
+		<m:dependency.management__velocity-tools__velocity-tools__version>1.2</m:dependency.management__velocity-tools__velocity-tools__version>
+		<m:dependency.management__org.springframework.security__spring-security-core__version>3.0.5.RELEASE</m:dependency.management__org.springframework.security__spring-security-core__version>
+		<m:dependency.management__jfree__jfreechart__version>1.0.12</m:dependency.management__jfree__jfreechart__version>
+		<m:dependency.management__org.hisp.dhis__dhis-service-patient__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-service-patient__version>
+		<m:dependency.management__net.java.dev.msv__msv__version>20081113</m:dependency.management__net.java.dev.msv__msv__version>
+		<m:dependency.management__commons-io__commons-io__version>1.4</m:dependency.management__commons-io__commons-io__version>
+		<m:properties__rootDir>../../</m:properties__rootDir>
+		<m:dependency.management__xpp3__xpp3__version>1.1.3.3</m:dependency.management__xpp3__xpp3__version>
+		<m:dependency.management__net.sf.jasperreports__jasperreports__version>4.0.1</m:dependency.management__net.sf.jasperreports__jasperreports__version>
+		<m:dependency.management__org.hisp.dhis__dhis-support-hibernate__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-support-hibernate__version>
+		<m:dependency.management__org.springframework.security__spring-security-web__version>3.0.5.RELEASE</m:dependency.management__org.springframework.security__spring-security-web__version>
+		<m:dependency.management__org.apache.struts__struts2-core__version>2.1.8.1</m:dependency.management__org.apache.struts__struts2-core__version>
+		<m:dependency.management__geronimo-spec__geronimo-spec-jta__version>1.0-M1</m:dependency.management__geronimo-spec__geronimo-spec-jta__version>
+		<m:dependency.management__org.codehaus.woodstox__stax2-api__version>3.0.1</m:dependency.management__org.codehaus.woodstox__stax2-api__version>
+		<m:dependency.management__javax.xml.stream__stax-api__version>1.0-2</m:dependency.management__javax.xml.stream__stax-api__version>
+		<m:dependency.management__com.h2database__h2__version>1.3.153</m:dependency.management__com.h2database__h2__version>
+		<m:dependency.management__org.codehaus.woodstox__woodstox-core-asl__version>4.0.7</m:dependency.management__org.codehaus.woodstox__woodstox-core-asl__version>
+		<m:dependency.management__org.springframework__spring-aop__version>3.0.5.RELEASE</m:dependency.management__org.springframework__spring-aop__version>
+		<m:dependency.management__c3p0__c3p0__version>0.9.1.2</m:dependency.management__c3p0__c3p0__version>
+		<m:dependency.management__org.springframework__spring-beans__version>3.0.5.RELEASE</m:dependency.management__org.springframework__spring-beans__version>
+		<m:dependency.management__org.springframework__spring-expression__version>3.0.5.RELEASE</m:dependency.management__org.springframework__spring-expression__version>
+		<m:dependency.management__net.sourceforge.jexcelapi__jxl__version>2.6</m:dependency.management__net.sourceforge.jexcelapi__jxl__version>
+		<m:dependency.management__org.springframework__spring-core__version>3.0.5.RELEASE</m:dependency.management__org.springframework__spring-core__version>
+		<m:dependency.management__org.hisp.dhis__dhis-service-datamart-default__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-service-datamart-default__version>
+		<m:dependency.management__commons-logging__commons-logging__version>1.1</m:dependency.management__commons-logging__commons-logging__version>
+		<m:dependency.management__org.springframework__spring-jdbc__version>3.0.5.RELEASE</m:dependency.management__org.springframework__spring-jdbc__version>
+		<m:dependency.management__org.hisp.dhis__dhis-service-aggregationengine-default__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-service-aggregationengine-default__version>
+		<m:dependency.management__org.apache.xmlgraphics__batik-transcoder__version>1.7</m:dependency.management__org.apache.xmlgraphics__batik-transcoder__version>
+		<m:dependency.management__commons-validator__commons-validator__version>1.3.1</m:dependency.management__commons-validator__commons-validator__version>
+		<m:dependency.management__org.hisp.dhis__dhis-service-importexport__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-service-importexport__version>
+		<m:properties__project.build.sourceEncoding>UTF-8</m:properties__project.build.sourceEncoding>
+		<m:dependency.management__org.slf4j__slf4j-log4j12__version>1.5.8</m:dependency.management__org.slf4j__slf4j-log4j12__version>
+		<m:dependency.management__org.hisp.dhis__dhis-support-jdbc__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-support-jdbc__version>
+		<m:dependency.management__com.thoughtworks.xstream__xstream__version>1.3</m:dependency.management__com.thoughtworks.xstream__xstream__version>
+		<m:dependency.management__xpp3__xpp3__scope>runtime</m:dependency.management__xpp3__xpp3__scope>
+		<m:dependency.management__net.fckeditor__java-core__version>2.6</m:dependency.management__net.fckeditor__java-core__version>
+		<m:dependency.management__org.amplecode__cave-process__version>1.0.3</m:dependency.management__org.amplecode__cave-process__version>
+		<m:dependency.management__commons-lang__commons-lang__version>2.5</m:dependency.management__commons-lang__commons-lang__version>
+		<m:dependency.management__net.java.dev.msv__xsdlib__scope>test</m:dependency.management__net.java.dev.msv__xsdlib__scope>
+		<m:dependency.management__com.lowagie__itext__version>2.1.5</m:dependency.management__com.lowagie__itext__version>
+		<m:dependency.management__commons-logging__commons-logging__scope>compile</m:dependency.management__commons-logging__commons-logging__scope>
+		<m:dependency.management__commons-math__commons-math__version>1.2</m:dependency.management__commons-math__commons-math__version>
+		<m:dependency.management__org.hisp.dhis__dhis-service-mapping__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-service-mapping__version>
+		<m:dependency.management__javax.xml.stream__stax-api__scope>test</m:dependency.management__javax.xml.stream__stax-api__scope>
+		<m:dependency.management__org.aspectj__aspectjrt__version>1.6.4</m:dependency.management__org.aspectj__aspectjrt__version>
+		<m:dependency.management__org.hisp.dhis__dhis-api__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-api__version>
+		<m:dependency.management__commons-digester__commons-digester__version>1.7</m:dependency.management__commons-digester__commons-digester__version>
+		<m:dependency.management__org.hisp.dhis__dhis-support-external__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-support-external__version>
+		<m:dependency.management__org.hisp.dhis__dhis-support-jdbc-test__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-support-jdbc-test__version>
+		<m:dependency.management__org.aspectj__aspectjweaver__version>1.6.4</m:dependency.management__org.aspectj__aspectjweaver__version>
+		<m:dependency.management__commons-codec__commons-codec__version>1.3</m:dependency.management__commons-codec__commons-codec__version>
+		<m:dependency.management__postgresql__postgresql__version>9.0-801.jdbc4</m:dependency.management__postgresql__postgresql__version>
+		<m:dependency.management__org.hisp.dhis__dhis-service-reporting__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-service-reporting__version>
+		<m:dependency.management__net.java.dev.msv__relaxngDatatype__version>20081113</m:dependency.management__net.java.dev.msv__relaxngDatatype__version>
+		<m:dependency.management__org.hisp.dhis__dhis-service-i18n__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-service-i18n__version>
+		<m:dependency.management__org.apache.xmlgraphics__batik-codec__version>1.7</m:dependency.management__org.apache.xmlgraphics__batik-codec__version>
+		<m:dependency.management__org.hibernate__hibernate-core__version>3.5.6-Final</m:dependency.management__org.hibernate__hibernate-core__version>
+		<m:dependency.management__org.hisp.dhis__dhis-support-test__scope>test</m:dependency.management__org.hisp.dhis__dhis-support-test__scope>
+		<m:dependency.management__org.springframework__spring-context__version>3.0.5.RELEASE</m:dependency.management__org.springframework__spring-context__version>
+		<m:properties__hibernate.version>3.5.6-Final</m:properties__hibernate.version>
+		<m:dependency.management__org.hisp.dhis__dhis-service-core__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-service-core__version>
+		<m:dependency.management__net.java.dev.msv__xsdlib__version>20081113</m:dependency.management__net.java.dev.msv__xsdlib__version>
+		<m:dependency.management__stax__stax-api__version>1.0.1</m:dependency.management__stax__stax-api__version>
+		<m:dependency.management__org.springframework__spring-test__version>3.0.5.RELEASE</m:dependency.management__org.springframework__spring-test__version>
+		<m:dependency.management__org.hisp.dhis__dhis-service-expressionengine-default__version>2.2-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-service-expressionengine-default__version>
+	</info>
+	<configurations>
+		<conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+		<conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+		<conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+		<conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+		<conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+		<conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+		<conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+		<conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+		<conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
+	</configurations>
+	<publications>
+		<artifact name="dhis-support-xml" type="jar" ext="jar" conf="master"/>
+	</publications>
+	<dependencies>
+		<dependency org="org.hisp.dhis" name="dhis-support-test" rev="2.2-SNAPSHOT" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="commons-logging" name="commons-logging" rev="1.1" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)">
+			<exclude org="avalon-framework" module="avalon-framework" name="*" type="*" ext="*" conf="" matcher="exact"/>
+			<exclude org="logkit" module="logkit" name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.codehaus.woodstox" name="stax2-api" rev="3.0.1" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<dependency org="org.codehaus.woodstox" name="woodstox-core-asl" rev="4.0.7" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<dependency org="junit" name="junit" rev="4.8.1" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="net.java.dev.msv" name="msv" rev="20081113" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="net.java.dev.msv" name="relaxngDatatype" rev="20081113" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="net.java.dev.msv" name="xsdlib" rev="20081113" force="true" conf="test->runtime(*),master(*)"/>
+		<override org="org.hisp.dhis" module="dhis-support-test" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="org.springframework.security" module="spring-security-core" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.springframework.security" module="spring-security-core" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.springframework.security" module="spring-security-core" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.springframework.security" module="spring-security-core" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.hisp.dhis" module="dhis-service-administration" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="org.apache.poi" module="poi" matcher="exact" rev="3.7"/>
+		<override org="org.apache.commons" module="commons-email" matcher="exact" rev="1.1"/>
+		<override org="org.hibernate" module="hibernate-entitymanager" matcher="exact" rev="3.5.6-Final"/>
+		<override org="mysql" module="mysql-connector-java" matcher="exact" rev="5.1.6"/>
+		<override org="org.hisp.dhis" module="dhis-support-xml" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="javax.servlet" module="servlet-api" matcher="exact" rev="2.4"/>
+		<override org="jfree" module="jcommon" matcher="exact" rev="1.0.15"/>
+		<override org="org.hisp.dhis" module="dhis-support-system" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="velocity" module="velocity" matcher="exact" rev="1.5"/>
+		<override org="com.ibatis" module="ibatis2-sqlmap" matcher="exact" rev="2.1.7.597"/>
+		<override org="net.sf.jasperreports" module="jasperreports" matcher="exact" rev="4.0.1"/>
+		<override org="net.sf.jasperreports" module="jasperreports" matcher="exact" rev="4.0.1"/>
+		<override org="org.apache.struts" module="struts2-spring-plugin" matcher="exact" rev="2.1.8.1"/>
+		<override org="org.amplecode" module="quick" matcher="exact" rev="1.3"/>
+		<override org="jfree" module="jfreechart" matcher="exact" rev="1.0.12"/>
+		<override org="javax.servlet" module="servlet-api" matcher="exact" rev="2.4"/>
+		<override org="org.hibernate" module="hibernate-ehcache" matcher="exact" rev="3.5.6-Final"/>
+		<override org="commons-collections" module="commons-collections" matcher="exact" rev="3.2"/>
+		<override org="org.springframework" module="spring-orm" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.springframework" module="spring-tx" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="net.java.dev.msv" module="relaxngDatatype" matcher="exact" rev="20081113"/>
+		<override org="com.ibatis" module="ibatis2-common" matcher="exact" rev="2.1.7.597"/>
+		<override org="org.apache.xmlgraphics" module="batik-transcoder" matcher="exact" rev="1.7"/>
+		<override org="org.springframework" module="spring-web" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="jfree" module="jcommon" matcher="exact" rev="1.0.15"/>
+		<override org="org.springframework.security" module="spring-security-config" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="jep" module="jep" matcher="exact" rev="2.4.1"/>
+		<override org="net.sf.ehcache" module="ehcache-core" matcher="exact" rev="2.3.2"/>
+		<override org="junit" module="junit" matcher="exact" rev="4.8.1"/>
+		<override org="commons-fileupload" module="commons-fileupload" matcher="exact" rev="1.2.1"/>
+		<override org="net.java.dev.msv" module="msv" matcher="exact" rev="20081113"/>
+		<override org="joda-time" module="joda-time" matcher="exact" rev="1.5.2"/>
+		<override org="commons-logging" module="commons-logging" matcher="exact" rev="1.1"/>
+		<override org="commons-logging" module="commons-logging" matcher="exact" rev="1.1"/>
+		<override org="org.hisp.dhis" module="dhis-service-options" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="org.springframework" module="spring-asm" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.hibernate" module="hibernate-ehcache" matcher="exact" rev="3.5.6-Final"/>
+		<override org="org.hisp.dhis" module="dhis-support-jdbc-test" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="velocity-tools" module="velocity-tools" matcher="exact" rev="1.2"/>
+		<override org="org.springframework.security" module="spring-security-core" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="jfree" module="jfreechart" matcher="exact" rev="1.0.12"/>
+		<override org="org.hisp.dhis" module="dhis-service-patient" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="net.java.dev.msv" module="msv" matcher="exact" rev="20081113"/>
+		<override org="commons-io" module="commons-io" matcher="exact" rev="1.4"/>
+		<override org="xpp3" module="xpp3" matcher="exact" rev="1.1.3.3"/>
+		<override org="net.sf.jasperreports" module="jasperreports" matcher="exact" rev="4.0.1"/>
+		<override org="org.hisp.dhis" module="dhis-support-hibernate" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="org.springframework.security" module="spring-security-web" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.apache.struts" module="struts2-core" matcher="exact" rev="2.1.8.1"/>
+		<override org="geronimo-spec" module="geronimo-spec-jta" matcher="exact" rev="1.0-M1"/>
+		<override org="org.codehaus.woodstox" module="stax2-api" matcher="exact" rev="3.0.1"/>
+		<override org="javax.xml.stream" module="stax-api" matcher="exact" rev="1.0-2"/>
+		<override org="com.h2database" module="h2" matcher="exact" rev="1.3.153"/>
+		<override org="org.codehaus.woodstox" module="woodstox-core-asl" matcher="exact" rev="4.0.7"/>
+		<override org="org.springframework" module="spring-aop" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="c3p0" module="c3p0" matcher="exact" rev="0.9.1.2"/>
+		<override org="org.springframework" module="spring-beans" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.springframework" module="spring-expression" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="net.sourceforge.jexcelapi" module="jxl" matcher="exact" rev="2.6"/>
+		<override org="org.springframework" module="spring-core" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.hisp.dhis" module="dhis-service-datamart-default" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="commons-logging" module="commons-logging" matcher="exact" rev="1.1"/>
+		<override org="org.springframework" module="spring-jdbc" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.hisp.dhis" module="dhis-service-aggregationengine-default" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="org.apache.xmlgraphics" module="batik-transcoder" matcher="exact" rev="1.7"/>
+		<override org="commons-validator" module="commons-validator" matcher="exact" rev="1.3.1"/>
+		<override org="org.hisp.dhis" module="dhis-service-importexport" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="org.slf4j" module="slf4j-log4j12" matcher="exact" rev="1.5.8"/>
+		<override org="org.hisp.dhis" module="dhis-support-jdbc" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="com.thoughtworks.xstream" module="xstream" matcher="exact" rev="1.3"/>
+		<override org="xpp3" module="xpp3" matcher="exact" rev="1.1.3.3"/>
+		<override org="net.fckeditor" module="java-core" matcher="exact" rev="2.6"/>
+		<override org="org.amplecode" module="cave-process" matcher="exact" rev="1.0.3"/>
+		<override org="commons-lang" module="commons-lang" matcher="exact" rev="2.5"/>
+		<override org="net.java.dev.msv" module="xsdlib" matcher="exact" rev="20081113"/>
+		<override org="com.lowagie" module="itext" matcher="exact" rev="2.1.5"/>
+		<override org="commons-logging" module="commons-logging" matcher="exact" rev="1.1"/>
+		<override org="commons-math" module="commons-math" matcher="exact" rev="1.2"/>
+		<override org="org.hisp.dhis" module="dhis-service-mapping" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="javax.xml.stream" module="stax-api" matcher="exact" rev="1.0-2"/>
+		<override org="org.aspectj" module="aspectjrt" matcher="exact" rev="1.6.4"/>
+		<override org="org.hisp.dhis" module="dhis-api" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="commons-digester" module="commons-digester" matcher="exact" rev="1.7"/>
+		<override org="org.hisp.dhis" module="dhis-support-external" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="org.hisp.dhis" module="dhis-support-jdbc-test" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="org.aspectj" module="aspectjweaver" matcher="exact" rev="1.6.4"/>
+		<override org="commons-codec" module="commons-codec" matcher="exact" rev="1.3"/>
+		<override org="postgresql" module="postgresql" matcher="exact" rev="9.0-801.jdbc4"/>
+		<override org="net.java.dev.msv" module="relaxngDatatype" matcher="exact" rev="20081113"/>
+		<override org="org.hisp.dhis" module="dhis-service-reporting" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="org.hisp.dhis" module="dhis-service-i18n" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="org.apache.xmlgraphics" module="batik-codec" matcher="exact" rev="1.7"/>
+		<override org="org.hisp.dhis" module="dhis-support-test" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="org.hibernate" module="hibernate-core" matcher="exact" rev="3.5.6-Final"/>
+		<override org="org.springframework" module="spring-context" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.hisp.dhis" module="dhis-service-core" matcher="exact" rev="2.2-SNAPSHOT"/>
+		<override org="net.java.dev.msv" module="xsdlib" matcher="exact" rev="20081113"/>
+		<override org="stax" module="stax-api" matcher="exact" rev="1.0.1"/>
+		<override org="org.springframework" module="spring-test" matcher="exact" rev="3.0.5.RELEASE"/>
+		<override org="org.hisp.dhis" module="dhis-service-expressionengine-default" matcher="exact" rev="2.2-SNAPSHOT"/>
+	</dependencies>
+</ivy-module>
