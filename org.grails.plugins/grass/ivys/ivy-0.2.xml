@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+        <info organisation="org.grails.plugins" module="grass" revision="0.2" status="release" publication="20110510144919">
+        </info>
+
+        <configurations>
+                <conf name="default" description="Grails Grass plugin" visibility="public"/>
+        </configurations>
+
+        <publications>
+                <artifact name="grass" type="zip" ext="zip" conf="default"/>
+        </publications>
+
+
+</ivy-module>
