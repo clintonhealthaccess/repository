@@ -1,0 +1,8 @@
+<ivysettings>
+	<resolvers>
+		<url name="dongxi-public">
+			<ivy      pattern="http://github.com/fterrier/repository/raw/master/[organisation]/[module]/ivys/ivy-[revision].xml"/>
+			<artifact pattern="http://github.com/fterrier/repository/raw/master/[organisation]/[module]/[type]s/[artifact]-[revision].[ext]"/>
+		</url>
+	</resolvers>
+</ivysettings>
