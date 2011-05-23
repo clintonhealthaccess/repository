@@ -4,7 +4,7 @@
 		module="dhis-support-external"
 		revision="2.3-SNAPSHOT"
 		status="integration"
-		publication="20110519154007"
+		publication="20110523145630"
 	>
 		<description homepage="" />
 		<m:dependency.management__org.hisp.dhis__dhis-support-test__version>2.3-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-support-test__version>

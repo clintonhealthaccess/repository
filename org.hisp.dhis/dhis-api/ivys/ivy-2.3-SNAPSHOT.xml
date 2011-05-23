@@ -4,7 +4,7 @@
 		module="dhis-api"
 		revision="2.3-SNAPSHOT"
 		status="integration"
-		publication="20110519154005"
+		publication="20110523145629"
 	>
 		<description homepage="" />
 		<m:dependency.management__org.hisp.dhis__dhis-support-test__version>2.3-SNAPSHOT</m:dependency.management__org.hisp.dhis__dhis-support-test__version>
