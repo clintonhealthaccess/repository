@@ -4,7 +4,7 @@
 		module="jep"
 		revision="2.4.1"
 		status="release"
-		publication="20110510141934"
+		publication="20110519154147"
 		default="true"
 	/>
 	<configurations>
