@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
 	<info organisation="org.grails.plugins"
-		module="springcache"
-		revision="1.3.3"
+		module="chai-locations"
+		revision="0.4-CHAI"
 		status="release"
-		publication="20120822173343"
+		publication="20121105170327"
 	>
 		<description homepage="">
 		POM was created from install:install-file
@@ -23,6 +23,6 @@
 		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
 	</configurations>
 	<publications>
-		<artifact name="springcache" type="zip" ext="zip" conf="master"/>
+		<artifact name="chai-locations" type="zip" ext="zip" conf="master"/>
 	</publications>
 </ivy-module>
