@@ -1,0 +1,260 @@
+<?xml version="1.0"?> 
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one
+   or more contributor license agreements.  See the NOTICE file
+   distributed with this work for additional information
+   regarding copyright ownership.  The ASF licenses this file
+   to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance
+   with the License.  You may obtain a copy of the License at
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+   specific language governing permissions and limitations
+   under the License.    
+--> 
+<!-- ====================================================================== 
+     This is a sample project to build our own ivy repository.
+     ====================================================================== --> 
+<project name="ivy-repository" default="maven2-deps" xmlns:ivy="antlib:org.apache.ivy.ant"> 
+
+	<!-- THIS NEEDS TO BE CONFIGURED -->
+	<!-- property name="git.repo.dir" value=""/ -->	
+
+	<property name="from.resolver" value="maven2"/> 
+	<property name="to.resolver" value="my-repository"/> 
+	
+	<property name="ivy.cache.dir" value="${basedir}/cache" /> 
+	<property name="dest.repo.dir" value="${basedir}/myrepository" /> 	 	
+
+	<property name="ivy.jar.dir" value="${user.home}/.ivy2/jars" /> 
+	<property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar" /> 
+ 
+	
+	<!-- ================================= 
+			ivy + dependencies targets
+         ================================= -->
+
+	<!-- ================================= 
+          target: load-ivy         
+            this target is not necessary if you put ivy.jar in your ant lib directory
+            if you already have ivy 1.4 in your ant lib, you can simply remove this
+            target
+         ================================= --> 
+    <target name="load-ivy"> 
+    	<!-- try to load ivy here from home ivy dir, in case the user has not already dropped
+    	      it into ant's lib dir (note that the latter copy will always take precedence).
+    	      We will not fail as long as ivy home lib dir exists (it may be empty) and
+    	      ivy is in at least one of ant's lib dir or the ivy home lib dir. --> 
+    	<path id="ivy.lib.path"> 
+    		<pathelement location="${ivy.jar.file}"/> 
+    	</path> 
+    	<taskdef resource="org/apache/ivy/ant/antlib.xml"
+    	          uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/> 
+    </target>    
+
+	<target name="load-contrib" depends="init-ivy, output-ivy-file, retrieve-ivy-dependencies, delete-ivy-file">
+		<taskdef resource="net/sf/antcontrib/antlib.xml">
+			<classpath>
+				<pathelement location="${ant-contrib.ant-contrib}" />
+			</classpath>
+		</taskdef>
+		<property name="ant.contrib.loaded" value="true" />
+	</target>
+	
+	<target name="retrieve-ivy-dependencies" depends="output-ivy-file">
+		<ivy:retrieve />
+		<ivy:artifactproperty name="[module].[artifact]" value="lib/[artifact]-[revision].[ext]" />
+	</target>
+	
+	<target name="output-ivy-file">
+		<echoxml file="ivy.xml">
+			<ivy-module version="2.0">
+			    <info organisation="org.chai" module="repository" status="release"/>
+
+			    <dependencies>
+			        <dependency org="ant-contrib" name="ant-contrib" rev="1.0b3" transitive="false"/>
+			    </dependencies>
+			</ivy-module>
+		</echoxml>
+	</target>
+	
+	<target name="delete-ivy-file">
+		<delete file="ivy.xml"/>
+	</target>
+ 
+	<target name="output-ivy-settings-file">
+		<echoxml file="ivysettings.xml">
+			<ivysettings>
+				<settings defaultCache="${ivy.cache.dir}/no-namespace"
+					defaultResolver="maven2" defaultConflictManager="all" />         <!-- in order to get all revisions without any eviction -->
+		        
+				<resolvers>
+					<chain name="maven2">
+						<ibiblio name="maven2-local" m2compatible="true" root="file://${user.home}/.m2/repository/" />
+						<packager name="packager" buildRoot="${user.home}/.ivy2/build" resourceCache="${user.home}/.ivy2/cache">
+							<ivy      pattern="file://${basedir}/packager/[organisation]/[module]/[revision]/ivy.xml"/>
+							<artifact pattern="file://${basedir}/packager/[organisation]/[module]/[revision]/packager.xml"/>
+						</packager>
+						<ibiblio name="libraries" m2compatible="true" />
+					</chain>
+					<filesystem name="my-repository">
+						<ivy pattern="${dest.repo.dir}/[organisation]/[module]/ivys/ivy-[revision].xml"/>
+						<artifact pattern="${dest.repo.dir}/[organisation]/[module]/[type]s/[artifact]-[revision].[ext]"/>
+					</filesystem>
+				</resolvers>
+			</ivysettings>
+		</echoxml>
+	</target>
+
+    <target name="init-ivy" depends="output-ivy-settings-file, load-ivy"> 
+       	<ivy:settings id="basic.settings" file="ivysettings.xml"/> 
+    </target>
+
+	
+	<!-- ================================= 
+			find artifact id and revision
+         ================================= -->
+
+	<target name="find-plugin-file">
+		<fileset id="plugin.file" dir=".">
+			<filename regex=".*GrailsPlugin.groovy"/>
+		</fileset>
+		<property name="plugin.file.name" refid="plugin.file"/>
+	</target>
+
+	<target name="find-artifact-id" depends="find-plugin-file, load-contrib">
+		<propertyregex property="artifact.id" input="${plugin.file.name}" regexp="(.*)GrailsPlugin.groovy" select="\1" />
+		<propertyregex property="artifact.id" input="${artifact.id}" override="true" regexp="([A-Z])" replace="-\1" />
+		<propertyregex property="artifact.id" input="${artifact.id}" override="true" regexp="^-" replace="" />
+		
+		<script language="javascript">project.setProperty("artifact.id", project.getProperty("artifact.id").toLowerCase());</script>
+		
+		<echo message="found artifact id: ${artifact.id}"/>
+	</target>
+
+	<target name="find-revision" depends="find-plugin-file, load-contrib">
+		<loadfile property="plugin.file" srcFile="${plugin.file.name}"/>
+		<propertyregex property="revision" input="${plugin.file}" regexp="def version(.*)" select="\1" />
+		<propertyregex property="revision" input="${revision}" override="true" regexp="=|&quot;|\s" replace="" />
+
+		<echo message="found revision: ${revision}"/>
+	</target>
+	
+	
+	<!-- ================================= 
+			package, install plugin, create local repository
+         ================================= -->
+	
+	<target name="check-plugin-package" depends="find-artifact-id, find-revision">
+		<available file="grails-${artifact.id}-${revision}.zip" property="package.present"/>
+	</target>
+
+	<target name="package-plugin" unless="package.present" depends="check-plugin-package">
+		<exec executable="grails">
+			<arg value="package-plugin"/>
+			<arg value="-non-interactive"/>
+		</exec>
+	</target>
+
+	<target name="maven-install" depends="find-artifact-id, find-revision, package-plugin">
+		<exec executable="mvn">
+			<arg value="install:install-file"/>
+			<arg value="-Dfile=grails-${artifact.id}-${revision}.zip"/>
+			<arg value="-DgroupId=org.grails.plugins"/>
+			<arg value="-DartifactId=${artifact.id}"/>
+			<arg value="-Dpackaging=zip"/>
+			<arg value="-Dversion=${revision}"/>
+		</exec>
+	</target>
+
+	<target name="create-repo-files" depends="init-ivy, package-plugin, maven-install, find-artifact-id, find-revision">
+		<ivy:install settingsRef="basic.settings" organisation="org.grails.plugins" module="${artifact.id}" 
+			revision="${revision}" from="${from.resolver}" to="${to.resolver}" transitive="true" overwrite="true"/>
+	</target>
+	
+	<!-- ================================= 
+			github related targets
+         ================================= -->
+
+	<target name="refresh-github">
+		<fail unless="git.repo.dir"/>
+		
+		<echo message="updating repository"/>
+		<exec executable="git" dir="${git.repo.dir}">
+			<arg value="pull"/>
+			<arg value="origin"/>
+			<arg value="master"/>
+		</exec>		
+	</target>
+	
+	<target name="copy-to-github">
+		<fail unless="git.repo.dir"/>
+		
+		<echo message="copying from build"/>
+		<copy todir="${git.repo.dir}/org.grails.plugins/" overwrite="true">
+			<fileset dir="${dest.repo.dir}/org.grails.plugins/"/>
+		</copy>
+	</target>
+	
+	<target name="add-commit-push-to-github" depends="find-artifact-id, find-revision, copy-to-github">
+		<fail unless="git.repo.dir"/>
+		
+		<exec executable="git" dir="${git.repo.dir}">
+			<arg value="add"/>
+			<arg value="org.grails.plugins/"/>
+		</exec>
+		
+		<exec executable="git" dir="${git.repo.dir}">
+			<arg value="commit"/>
+			<arg value="-m 'added ${artifact.id} version ${revision}'"/>
+		</exec>
+		
+		<exec executable="git" dir="${git.repo.dir}">
+			<arg value="push"/>
+			<arg value="origin"/>
+			<arg value="master"/>
+		</exec>
+	</target>
+	
+	<target name="upload-to-github" depends="refresh-github, copy-to-github, add-commit-push-to-github"/>
+  
+	<!-- ================================= 
+          target: clean-ivy
+         ================================= -->
+	<target name="clean-ivy">
+		<delete file="ivysettings.xml"/>
+		<delete file="lib/ant-contrib-1.0b3.jar"/>
+	</target>
+
+	<!-- ================================= 
+          target: clean-cache
+         ================================= --> 
+    <target name="clean-cache" depends="init-ivy" description="--> clean the cache"> 
+    	<ivy:cleancache settingsRef="basic.settings" /> 
+    	<delete dir="${ivy.cache.dir}" failonerror="true"  /> 
+    </target> 
+ 
+	<!-- ================================= 
+          target: clean-repo
+         ================================= --> 
+    <target name="clean-repo" description="--> clean the destination repository"> 
+    	<delete dir="${dest.repo.dir}" failonerror="true"  /> 
+    </target>
+
+	<target name="clean" depends="clean-ivy, clean-cache, clean-repo"/>
+
+
+	<!-- ================================= 
+          default target
+         ================================= --> 
+
+	<target name="publish-plugin" depends="maven-install, create-repo-files, upload-to-github, clean">
+		<echo message="plugin succesfully published"/>
+	</target>
+
+</project> 
